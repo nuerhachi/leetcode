@@ -3,6 +3,7 @@ package com.wencongxiao.leetcode;
 public class 平衡二叉树 {
 
     public boolean isBalanced(TreeNode root) {
+        int a;
         if (root==null) return true;
         return Math.abs(maxDepth(root.left)-maxDepth(root.right))<=1&&isBalanced(root.left)&&isBalanced(root.right)?true:false;
     }
