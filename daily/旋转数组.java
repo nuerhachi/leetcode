@@ -1,26 +1,30 @@
 package daily;
 
+import java.util.Arrays;
+
 public class 旋转数组 {
-    private static int[] next(int[] arrs,int k)
+    private static int[] reverse(int[] arrs,int i,int j)
     {
-        if (k>0){
-            int trans = arrs[arrs.length-1];
-            for (int i = arrs.length-1; i > 0 ; i--) {
-                arrs[i] =arrs[i--];
+            while (i<j)
+            {
+                int temp = arrs[j];
+                arrs[j] = arrs[i];
+                arrs[i] = temp;
+                i++;
+                j--;
             }
-            arrs[0] = trans;
-            return next(arrs,k--);
-        }
-        else return arrs;
+            return arrs;
     }
-    public void rotate(int[] nums, int k) {
+    public static void rotate(int[] nums, int k) {
         //空间O(1)
 //        System.out.println(next(nums,k);
-
+        reverse(nums,0, nums.length-1);
+        reverse(nums,0, k%nums.length-1);
+        reverse(nums,k%nums.length, nums.length-1);
     }
 
     public static void main(String[] args) {
         int[] arrat={1,2,3,4,5,6,7};
-        System.out.println(next(arrat,3));
+        rotate(arrat,3);
     }
 }
