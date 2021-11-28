@@ -8,8 +8,8 @@ public class 数组中出现次数超过一半的数字 {
     public int majorityElement(int[] nums) {
         int target = nums.length >>> 1;
         Arrays.sort(nums);
-int res=0;
-        HashSet hashSet = new HashSet();
+        int res = 0;
+        HashSet<Integer> hashSet = new HashSet<>();
         int count = 0;
         for (int i : nums) {
             if (hashSet.contains(i))
@@ -18,8 +18,8 @@ int res=0;
                 hashSet.add(i);
                 count = 1;
             }
-            if (count>target)
-                res=i;
+            if (count > target)
+                res = i;
         }
         return res;
     }

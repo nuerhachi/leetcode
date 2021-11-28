@@ -10,7 +10,7 @@ public class 从上到下打印二叉树 {
         Deque<TreeNode> deque = new LinkedList<>();
         if (root != null) deque.add(root);
         while (!deque.isEmpty()) {
-            List data = new ArrayList();
+            List<Integer> data = new ArrayList<>();
 
             for (int i = deque.size(); i >0; i--) {
                 TreeNode p = deque.pop();
