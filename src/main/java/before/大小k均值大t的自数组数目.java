@@ -1,3 +1,5 @@
+package before;
+
 public class 大小k均值大t的自数组数目 {
     public static int numOfSubarrays(int[] arr, int k, int threshold) {
         int len = arr.length, result = 0, sum = 0;
